@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get("/", async (req, res) => {
   try {
-    const URL = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.GOOGLE_PLACEID}&fields=reviews&key=${process.env.GOOGLE_APIKEY}`;
+    const URL = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.GOOGLE_PLACEID}&key=${process.env.GOOGLE_APIKEY}`;
 
     const { data } = await axios.get(URL);
     res.send(data);
